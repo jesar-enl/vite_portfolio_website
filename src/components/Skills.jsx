@@ -21,7 +21,7 @@ const Skills = () => {
         My Top Skills
       </Typography>
       <div
-        className="flex flex-col md:flex-row justify-center items-center bg-blue-gray-200  rounded p-20"
+        className="flex flex-col md:flex-row justify-center items-center rounded p-20"
         id="skills"
       >
         <div className="flex flex-wrap justify-center items-center ">
