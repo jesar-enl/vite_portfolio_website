@@ -1,7 +1,7 @@
 const ContactForm = () => {
   return (
     <div>
-      <section className="dark:bg-gray-900">
+      <section className="dark:bg-gray-900" id="contact">
         <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-100 dark:text-white">
             Contact Us
@@ -11,10 +11,15 @@ const ContactForm = () => {
             Reach out and let us know! We&apos;re here to help.
           </p>
           <form
-            action="https://formspree.io/f/xoqoeraw"
+            action="https://api.web3forms.com/submit"
             method="POST"
             className="space-y-8"
           >
+            <input
+              type="hidden"
+              name="access_key"
+              value="6c269648-f1e2-49da-929c-89d58f9990e2"
+            />
             <div>
               <label
                 htmlFor="email"
@@ -24,7 +29,7 @@ const ContactForm = () => {
               </label>
               <input
                 type="email"
-                name=""
+                name="email"
                 id="email"
                 className="shadow-sm bg-gray-600 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                 placeholder="name@email.com"
@@ -32,20 +37,6 @@ const ContactForm = () => {
               />
             </div>
             <div>
-              <label
-                htmlFor="name"
-                className="block mb-2 text-sm font-medium text-gray-100 dark:text-gray-300"
-              >
-                Your name
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                className="block p-3 w-full text-sm text-gray-900 bg-gray-600 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                placeholder="John Doe"
-                required
-              />
               <label
                 htmlFor="subject"
                 className="block mb-2 text-sm font-medium text-gray-100 dark:text-gray-300"
@@ -69,10 +60,12 @@ const ContactForm = () => {
                 Your message
               </label>
               <textarea
+                name="message"
                 id="message"
                 rows="6"
                 className="block p-2.5 w-full text-sm text-gray-900 bg-gray-600 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Place your message here..."
+                required
               ></textarea>
             </div>
             <button
